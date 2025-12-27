@@ -46,6 +46,7 @@
 | Sindhu B                | Sindhuu-B            | JNNCE                          |
 | Harshit Sethi           | HarshitRSethi      | IIIT Allahabad                  |
 | Abhigyan Tiwari            | Abh-igyan  | NIT Silchar                  |
+| Mahavir Dodiya          |Mvdodiya001           | IIIT Allahabad               |
 | Vishva Modh | ViMo018 | IIIT Allahabad |
 | Roshan Gupta| roshangupta4804-hue |  |  IIIT Allahabad | 
 | Ansh Patel             | ansh54052           | IIIT Allahabad                  |
