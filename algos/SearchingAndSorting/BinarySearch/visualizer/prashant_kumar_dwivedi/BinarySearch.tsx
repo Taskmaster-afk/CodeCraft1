@@ -6,7 +6,12 @@
 // This differs from a normal React app where all components are client by default.
 
 import { useState, useEffect } from "react";
-import { performBinarySearch, generateRandomArray, parseArrayInput, Step } from "./utils/binarySearchUtils";
+import {
+  performBinarySearch,
+  generateRandomArray,
+  parseArrayInput,
+  Step,
+} from "./utils/binarySearchUtils";
 import ArrayDisplay from "./components/ArrayDisplay";
 import StepDisplay from "./components/StepDisplay";
 import ResultsDisplay from "./components/ResultsDisplay";
@@ -67,7 +72,10 @@ export default function BinarySearch() {
   useEffect(() => {
     if (isPlaying && currentStep < steps.length - 1) {
       const actualSpeed = 3500 - speed;
-      const timer = setTimeout(() => setCurrentStep(currentStep + 1), actualSpeed);
+      const timer = setTimeout(
+        () => setCurrentStep(currentStep + 1),
+        actualSpeed
+      );
       return () => clearTimeout(timer);
     } else if (isPlaying) {
       setIsPlaying(false);
@@ -79,11 +87,15 @@ export default function BinarySearch() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-50">
       <div className="max-w-5xl w-full bg-white rounded-lg shadow-lg p-6">
-        <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Binary Search Visualizer</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
+          Binary Search Visualizer
+        </h1>
 
         <div className="mb-4">
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-1 text-gray-700">Array (comma-separated numbers):</label>
+            <label className="block text-sm font-medium mb-1 text-gray-700">
+              Array (comma-separated numbers):
+            </label>
             <div className="flex gap-2">
               <input
                 type="text"
@@ -92,13 +104,18 @@ export default function BinarySearch() {
                 className="border border-gray-300 px-3 py-2 flex-1 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="e.g., 1,3,5,7,9"
               />
-              <button onClick={setArrayFromInput} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium transition-colors whitespace-nowrap">
+              <button
+                onClick={setArrayFromInput}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium transition-colors whitespace-nowrap"
+              >
                 Set Array
               </button>
             </div>
           </div>
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-1 text-gray-700">Target Value:</label>
+            <label className="block text-sm font-medium mb-1 text-gray-700">
+              Target Value:
+            </label>
             <input
               type="number"
               value={target}
@@ -108,17 +125,25 @@ export default function BinarySearch() {
             />
           </div>
           <div className="flex flex-wrap gap-3 justify-center">
-            <button onClick={generateArray} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium transition-colors">
+            <button
+              onClick={generateArray}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium transition-colors"
+            >
               Generate Random Array
             </button>
-            <button onClick={startSearch} disabled={!target.trim()} className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded font-medium transition-colors">
+            <button
+              onClick={startSearch}
+              disabled={!target.trim()}
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded font-medium transition-colors"
+            >
               Let's visualize
             </button>
           </div>
         </div>
 
         <div className="mb-4 text-center">
-          Searching for: <span className="font-semibold">{target || "none"}</span>
+          Searching for:{" "}
+          <span className="font-semibold">{target || "none"}</span>
         </div>
 
         <ArrayDisplay array={array} current={current} />

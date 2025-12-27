@@ -7,7 +7,10 @@ export interface Step {
   foundIndex?: number;
 }
 
-export const performBinarySearch = (array: number[], target: number): Step[] => {
+export const performBinarySearch = (
+  array: number[],
+  target: number
+): Step[] => {
   const steps: Step[] = [];
   let low = 0;
   let high = array.length - 1;
@@ -30,10 +33,14 @@ export const performBinarySearch = (array: number[], target: number): Step[] => 
       steps[steps.length - 1].message += `, Found at index ${mid}`;
       break;
     } else if (array[mid] < target) {
-      steps[steps.length - 1].message += `, ${array[mid]} < ${target}, so low = ${mid + 1}`;
+      steps[steps.length - 1].message += `, ${
+        array[mid]
+      } < ${target}, so low = ${mid + 1}`;
       low = mid + 1;
     } else {
-      steps[steps.length - 1].message += `, ${array[mid]} > ${target}, so high = ${mid - 1}`;
+      steps[steps.length - 1].message += `, ${
+        array[mid]
+      } > ${target}, so high = ${mid - 1}`;
       high = mid - 1;
     }
   }
@@ -50,9 +57,15 @@ export const performBinarySearch = (array: number[], target: number): Step[] => 
 };
 
 export const generateRandomArray = (length: number = 10): number[] => {
-  return Array.from({ length }, () => Math.floor(Math.random() * 100)).sort((a, b) => a - b);
+  return Array.from({ length }, () => Math.floor(Math.random() * 100)).sort(
+    (a, b) => a - b
+  );
 };
 
 export const parseArrayInput = (input: string): number[] => {
-  return input.split(",").map((s) => parseInt(s.trim())).filter((n) => !isNaN(n)).sort((a, b) => a - b);
+  return input
+    .split(",")
+    .map((s) => parseInt(s.trim()))
+    .filter((n) => !isNaN(n))
+    .sort((a, b) => a - b);
 };

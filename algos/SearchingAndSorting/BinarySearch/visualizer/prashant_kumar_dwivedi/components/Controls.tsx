@@ -23,18 +23,29 @@ export default function Controls({
   steps,
   currentStep,
   speed,
-  setSpeed
+  setSpeed,
 }: ControlsProps) {
   return (
     <>
       <div className="mb-6 flex flex-wrap gap-3 justify-center">
-        <button onClick={prevStep} disabled={steps.length === 0 || currentStep === 0} className="bg-gray-700 text-white px-4 py-2 rounded disabled:opacity-50">
+        <button
+          onClick={prevStep}
+          disabled={steps.length === 0 || currentStep === 0}
+          className="bg-gray-700 text-white px-4 py-2 rounded disabled:opacity-50"
+        >
           Previous Step
         </button>
-        <button onClick={nextStep} disabled={steps.length === 0 || currentStep >= steps.length - 1} className="bg-blue-700 text-white px-4 py-2 rounded disabled:opacity-50">
+        <button
+          onClick={nextStep}
+          disabled={steps.length === 0 || currentStep >= steps.length - 1}
+          className="bg-blue-700 text-white px-4 py-2 rounded disabled:opacity-50"
+        >
           Next Step
         </button>
-        <button onClick={reset} className="bg-red-700 text-white px-4 py-2 rounded">
+        <button
+          onClick={reset}
+          className="bg-red-700 text-white px-4 py-2 rounded"
+        >
           Reset
         </button>
       </div>
